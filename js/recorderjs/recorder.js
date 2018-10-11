@@ -107,8 +107,7 @@ DEALINGS IN THE SOFTWARE.
   };
 
   Recorder.setupDownload = function(blob, filename){
-    //var url = (window.URL || window.webkitURL).createObjectURL(blob);
-	var url = 'C:\Users\uclab\Downloads'.createObjectURL(blob);
+	var url = (window.URL || window.webkitURL).createObjectURL(blob);
     var link = document.getElementById("save");
     link.href = url;
     link.download = filename || 'output.wav';
