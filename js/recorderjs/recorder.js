@@ -111,9 +111,6 @@ DEALINGS IN THE SOFTWARE.
     var link = document.getElementById("save");
     link.href = url;
     link.download = filename || 'output.wav';
-
-	//send to server
-	webSocket.send(blob);
   }
 
   window.Recorder = Recorder;
