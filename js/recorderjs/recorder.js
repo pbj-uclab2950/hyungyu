@@ -113,7 +113,7 @@ DEALINGS IN THE SOFTWARE.
     link.download = filename || 'output.wav';
 
 	//send to server
-	socket.send(blob);
+	webSocket.send(blob);
   }
 
   window.Recorder = Recorder;
