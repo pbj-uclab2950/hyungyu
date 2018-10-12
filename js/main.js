@@ -25,6 +25,9 @@ var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
 
+
+
+
 /* TODO:
 
 - offer mono option
@@ -50,9 +53,6 @@ function gotBuffers( buffers ) {
 function doneEncoding( blob ) {
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
-
-	alert('save file to server');
-	window.navigator.msSaveBlob(blob, 'myRecording.wav');
 }
 
 function toggleRecording( e ) {
