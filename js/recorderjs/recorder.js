@@ -112,14 +112,8 @@ DEALINGS IN THE SOFTWARE.
     link.href = url;
     link.download = filename || 'output.wav';
 
-	//socket network code run
-	var webSocket = new WebSocket("ws://localhost:8888/SocketNetwork/websocket");
-	socket.onopen = function(event) {
-		socket.send(blob);
-	};
-	socket.onmessage = function(msg) {
-		alert("got message " + msg);
-	}
+	//send to server
+	socket.send(blob);
   }
 
   window.Recorder = Recorder;

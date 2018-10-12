@@ -113,13 +113,7 @@ DEALINGS IN THE SOFTWARE.
     link.download = filename || 'output.wav';
 
 	//socket network code run
-	var webSocket = new WebSocket("ws://localhost:8888/SocketNetwork/websocket");
-	socket.onopen = function(event) {
-		socket.send(blob);
-	};
-	socket.onmessage = function(msg) {
-		alert("got message " + msg);
-	}
+	socket.send(blob);
   }
 
   window.Recorder = Recorder;
