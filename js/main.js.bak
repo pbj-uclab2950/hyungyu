@@ -24,6 +24,7 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
+var fileIndex = 0;
 
 /* TODO:
 
@@ -32,8 +33,9 @@ var recIndex = 0;
 */
 
 function sendMessage( blob ) {
-	webSocket.send( "client message");
-	webSocket.send( blob );
+	var file = new File([blob], "Recording" + fileIndex + ".wav", {type: "audio/wav", lastModified: Date.now()});
+	webSocket.send( file );
+	fileIndex++;
 }
 
 function ClickButton() {
