@@ -31,6 +31,15 @@ var recIndex = 0;
 - "Monitor input" switch
 */
 
+function sendMessage( blob ) {
+	webSocket.send( "client message");
+	webSocket.send( blob );
+}
+
+function ClickButton() {
+	audioRecorder.exportWAV( sendMessage );
+}
+
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying

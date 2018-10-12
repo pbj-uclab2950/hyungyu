@@ -79,21 +79,15 @@
 	webSocket.onmessage = function(msg) {
 		alert("Message recieve from server is " + msg.data);
 	}
-	function sendMessage() {
-		var message = "hello world!";
-		webSocket.send(message.value);
-		message.value = "";
-		webSocket.close();
-	}
-
 </script>
+
 	<div id="viz">
 		<canvas id="analyser" width="1024" height="500"></canvas>
 		<canvas id="wavedisplay" width="1024" height="500"></canvas>
 	</div>
 	<div id="controls">
 		<img id="record" src="img/mic128.png" onclick="toggleRecording(this);" style="cursor:pointer">
-		<a id="save" href="#"><img src="img/save.svg" style="cursor:pointer" onclick="sendMessage()"></a>
+		<a id="save" href="#"><img src="img/save.svg" style="cursor:pointer" onclick="ClickButton()"></a>
 	</div>
 </body>
 </html>
