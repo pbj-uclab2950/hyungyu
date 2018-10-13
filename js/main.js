@@ -32,7 +32,9 @@ var recIndex = 0;
 */
 
 function sendMessage( blob ) {
-	var file = new File([blob], "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+	filename = "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav";
+	webSocket.send(filename);
+	var file = new File([blob], filename);
 	webSocket.send(file);
 }
 
