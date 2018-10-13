@@ -66,7 +66,7 @@
 <body>
 
 <script type="text/javascript">
-	var webSocket = new WebSocket("ws://localhost:8888/SocketNetwork/websocket");
+	var webSocket = new WebSocket("ws://localhost:8888/socket/websocket");
 	webSocket.onopen = function(msg) {
 		alert("server is connected");
 	}
@@ -87,7 +87,10 @@
 	</div>
 	<div id="controls">
 		<img id="record" src="img/mic128.png" onclick="toggleRecording(this);" style="cursor:pointer">
+		<!--
 		<a id="save" href="#"><img src="img/save.svg" style="cursor:pointer" onclick="ClickButton()"></a>
+		-->
+		<img src="img/analysis.svg" style="cursor:pointer" onclick="ClickButton()">
 	</div>
 </body>
 </html>
