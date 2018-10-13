@@ -35,13 +35,14 @@ var fileIndex = 0;
 function sendMessage( blob ) {
 //	var file = new File([blob], "recording.wav");
 //	webSocket.send(file);
+	alert(blob.size);
 	var buffer = new ArrayBuffer(blob.size);
 	var bytes = new Uint8Array(buffer);
 	for (var i=0; i<bytes.length; i++) {
 	 bytes[i] = i;
 	}
 	websocket.send(buffer);
-
+	
 }
 
 function ClickButton() {
