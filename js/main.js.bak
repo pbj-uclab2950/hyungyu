@@ -33,9 +33,8 @@ var fileIndex = 0;
 */
 
 function sendMessage( blob ) {
-	var file = new File([blob], "Recording" + fileIndex + ".wav", {type: "audio/wav", lastModified: Date.now()});
-	webSocket.send( file );
-	fileIndex++;
+	var file = new File([blob], "recording.wav");
+	webSocket.send(blob);
 }
 
 function ClickButton() {
