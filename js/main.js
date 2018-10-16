@@ -35,10 +35,10 @@ var flag = 0;
 
 function setImage() {
 	alert("TEST");
-	document.getElementById("neutral").src="img/neutral_color.svg;
-	document.getElementById("happiness").src="img/happiness_color.svg;
-	document.getElementById("sadness").src="img/sadness_color.svg;
-	document.getElementById("angry").src="img/angry_color.svg;
+	document.getElementById("neutral").src="img/neutral_color.svg";
+	document.getElementById("happiness").src="img/happiness_color.svg";
+	document.getElementById("sadness").src="img/sadness_color.svg";
+	document.getElementById("angry").src="img/angry_color.svg";
 }
 
 function sendMessage( blob ) {
