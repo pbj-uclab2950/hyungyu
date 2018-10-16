@@ -33,20 +33,20 @@ var SendBuffer = null;
 */
 
 function setImage(flag) {
-	document.getElementById("neutral").src="img/neutral_mono;
-	document.getElementById("happiness").src="img/happiness_mono;
-	document.getElementById("sadness").src="img/sadness_mono;
-	document.getElementById("angry").src="img/angry_mono;
+	document.getElementById("neutral").src="img/neutral_mono.svg;
+	document.getElementById("happiness").src="img/happiness_mono.svg;
+	document.getElementById("sadness").src="img/sadness_mono.svg;
+	document.getElementById("angry").src="img/angry_mono.svg;
 
 	switch(flag % 4) {
 		case 0:
-			document.getElementById("neutral").src="img/neutral_color;
+			document.getElementById("neutral").src="img/neutral_color.svg;
 		case 1:
-			document.getElementById("happiness").src="img/happiness_color;
+			document.getElementById("happiness").src="img/happiness_color.svg;
 		case 2:
-			document.getElementById("sadness").src="img/sadness_color;
+			document.getElementById("sadness").src="img/sadness_color.svg;
 		case 3:
-			document.getElementById("angry").src="img/angry_color;
+			document.getElementById("angry").src="img/angry_color.svg;
 	}
 	flag++;
 }
