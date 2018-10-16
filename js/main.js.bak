@@ -32,6 +32,24 @@ var SendBuffer = null;
 - "Monitor input" switch
 */
 
+function setImage(flag) {
+	document.getElementById("neutral").src="img/neutral_mono;
+	document.getElementById("happiness").src="img/happiness_mono;
+	document.getElementById("sadness").src="img/sadness_mono;
+	document.getElementById("angry").src="img/angry_mono;
+
+	switch(flag % 4) {
+		case 0:
+			document.getElementById("neutral").src="img/neutral_color;
+		case 1:
+			document.getElementById("happiness").src="img/happiness_color;
+		case 2:
+			document.getElementById("sadness").src="img/sadness_color;
+		case 3:
+			document.getElementById("angry").src="img/angry_color;
+	}
+}
+
 function sendMessage( blob ) {
 	filename = "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav";
 	webSocket.send(filename);
@@ -56,13 +74,13 @@ function StopSending() {
 }
 
 function gotBuffers( buffers ) {
-    var canvas = document.getElementById( "wavedisplay" );
+    //var canvas = document.getElementById( "wavedisplay" );
 
-    drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
+    //drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
 
     // the ONLY time gotBuffers is called is right after a new recording is completed - 
     // so here's where we should set up the download.
-    audioRecorder.exportWAV( doneEncoding );
+    //audioRecorder.exportWAV( doneEncoding );
 }
 
 function doneEncoding( blob ) {
@@ -75,7 +93,7 @@ function toggleRecording( e ) {
         // stop recording
         audioRecorder.stop();
         e.classList.remove("recording");
-        audioRecorder.getBuffers( gotBuffers );
+		//audioRecorder.getBuffers( gotBuffers );
 		StopSending(SendBuffer);
     } else {
         // start recording
