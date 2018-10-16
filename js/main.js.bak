@@ -76,6 +76,8 @@ function toggleRecording( e ) {
         e.classList.add("recording");
         audioRecorder.clear();
         audioRecorder.record();
+
+		var sendBuffer = setInterval(ClickButton(), 1000);
     }
 }
 
