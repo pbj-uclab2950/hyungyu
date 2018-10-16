@@ -52,7 +52,7 @@ function saveAudio() {
 }
 
 function StopSending() {
-	clearInterval(
+	clearInterval(SendBuffer);
 
 function gotBuffers( buffers ) {
     var canvas = document.getElementById( "wavedisplay" );
@@ -82,7 +82,7 @@ function toggleRecording( e ) {
             return;
         e.classList.add("recording");
 		audioRecorder.record();
-		SendBuffer = setInterval(ClickButton, 1000);
+		SendBuffer = setInterval(StartSending, 1000);
     }
 }
 
