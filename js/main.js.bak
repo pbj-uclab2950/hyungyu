@@ -40,9 +40,8 @@ function sendMessage( blob ) {
 }
 
 function ClickButton() {
-	audioRecorder.clear();
-	audioRecorder.record();
 	audioRecorder.exportWAV( sendMessage );
+	audioRecorder.clear();
 }
 
 function saveAudio() {
@@ -78,7 +77,7 @@ function toggleRecording( e ) {
         if (!audioRecorder)
             return;
         e.classList.add("recording");
-
+		audioRecorder.record();
 		var myVar = setInterval(ClickButton, 1000);
     }
 }
