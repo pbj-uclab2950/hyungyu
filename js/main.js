@@ -34,11 +34,22 @@ var flag = 0;
 */
 
 function setImage() {
-	alert("TEST");
-	document.getElementById("neutral").src="img/neutral_color.svg";
-	document.getElementById("happiness").src="img/happiness_color.svg";
-	document.getElementById("sadness").src="img/sadness_color.svg";
-	document.getElementById("angry").src="img/angry_color.svg";
+	document.getElementById("neutral").src="img/neutral_mono.svg;
+	document.getElementById("happiness").src="img/happiness_mono.svg;
+	document.getElementById("sadness").src="img/sadness_mono.svg;
+	document.getElementById("angry").src="img/angry_mono.svg;
+
+	switch(flag % 4) {
+		case 0:
+			document.getElementById("neutral").src="img/neutral_color.svg;
+		case 1:
+			document.getElementById("happiness").src="img/happiness_color.svg;
+		case 2:
+			document.getElementById("sadness").src="img/sadness_color.svg;
+		case 3:
+			document.getElementById("angry").src="img/angry_color.svg;
+	}
+	flag++;
 }
 
 function sendMessage( blob ) {
