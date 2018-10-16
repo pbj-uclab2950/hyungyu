@@ -79,23 +79,24 @@
 	webSocket.onmessage = function(msg) {
 		alert("Message recieve from server is " + msg.data);
 	}
-
-	var flag = 0;
 </script>
 
 	<div id="viz">
 		<canvas id="analyser" width="1024" height="500"></canvas>
-		<img id="neutral" src="img/neutral_mono.svg" width="256" height="256">
-		<img id="happiness" src="img/happiness_mono.svg" width="256" height="256">
-		<img id="sadness" src="img/sadness_mono.svg" width="256" height="256">
-		<img id="angry" src="img/angry_mono.svg" width="256" height="256">
+		<div id ="emotion">	
+			<img id="neutral" src="img/neutral_mono.svg" width="256" height="256">
+			<img id="happiness" src="img/happiness_mono.svg" width="256" height="256">
+			<img id="sadness" src="img/sadness_mono.svg" width="256" height="256">
+			<img id="angry" src="img/angry_mono.svg" width="256" height="256">
+		</div>
 	</div>
+	
 	<div id="controls">
 		<img id="record" src="img/mic128.png" onclick="toggleRecording(this);" style="cursor:pointer">
 		<!--
 		<a id="save" href="#"><img src="img/save.svg" style="cursor:pointer" onclick="ClickButton()"></a>
 		-->
-		<img src="img/analysis.svg" style="cursor:pointer" onClick="setImage(flag)">
+		<img src="img/analysis.svg" style="cursor:pointer" onClick="setImage()">
 	</div>
 
 </body>

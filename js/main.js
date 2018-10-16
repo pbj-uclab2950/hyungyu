@@ -25,6 +25,7 @@ var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
 var SendBuffer = null;
+var flag = 0;
 
 /* TODO:
 
@@ -32,7 +33,7 @@ var SendBuffer = null;
 - "Monitor input" switch
 */
 
-function setImage(flag) {
+function setImage() {
 	document.getElementById("neutral").src="img/neutral_mono.svg;
 	document.getElementById("happiness").src="img/happiness_mono.svg;
 	document.getElementById("sadness").src="img/sadness_mono.svg;
