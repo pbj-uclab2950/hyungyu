@@ -24,6 +24,7 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
+var SendBuffer = null;
 
 /* TODO:
 
@@ -39,7 +40,7 @@ function sendMessage( blob ) {
 	recIndex++;
 }
 
-function ClickButton() {
+function StartSending() {
 	audioRecorder.exportWAV( sendMessage );
 	audioRecorder.clear();
 }
@@ -49,6 +50,9 @@ function saveAudio() {
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );]
 }
+
+function StopSending() {
+	clearInterval(
 
 function gotBuffers( buffers ) {
     var canvas = document.getElementById( "wavedisplay" );
@@ -71,14 +75,14 @@ function toggleRecording( e ) {
         audioRecorder.stop();
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
-		clearInterval(ClickButton);
+		StopSending(SendBuffer);
     } else {
         // start recording
         if (!audioRecorder)
             return;
         e.classList.add("recording");
 		audioRecorder.record();
-		var myVar = setInterval(ClickButton, 1000);
+		SendBuffer = setInterval(StartSending, 1000);
     }
 }
 
