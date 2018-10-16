@@ -53,6 +53,7 @@ function saveAudio() {
 
 function StopSending() {
 	clearInterval(SendBuffer);
+}
 
 function gotBuffers( buffers ) {
     var canvas = document.getElementById( "wavedisplay" );
