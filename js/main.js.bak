@@ -36,6 +36,7 @@ function sendMessage( blob ) {
 	webSocket.send(filename);
 	var file = new File([blob], filename);
 	webSocket.send(file);
+	recIndex++;
 }
 
 function ClickButton() {
@@ -46,11 +47,6 @@ function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );]
-}
-
-function myTimer() {
-    var d = new Date();
-    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
 }
 
 function gotBuffers( buffers ) {
@@ -74,6 +70,7 @@ function toggleRecording( e ) {
         audioRecorder.stop();
         e.classList.remove("recording");
         audioRecorder.getBuffers( gotBuffers );
+		clearInterval(ClickButton);
     } else {
         // start recording
         if (!audioRecorder)
@@ -82,7 +79,7 @@ function toggleRecording( e ) {
         audioRecorder.clear();
         audioRecorder.record();
 
-		var myVar = setInterval(myTimer, 1000);
+		var myVar = setInterval(ClickButton, 1000);
     }
 }
 
