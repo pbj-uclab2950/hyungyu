@@ -48,6 +48,11 @@ function saveAudio() {
     // audioRecorder.exportMonoWAV( doneEncoding );]
 }
 
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+
 function gotBuffers( buffers ) {
     var canvas = document.getElementById( "wavedisplay" );
 
@@ -77,7 +82,7 @@ function toggleRecording( e ) {
         audioRecorder.clear();
         audioRecorder.record();
 
-		var sendBuffer = setInterval(ClickButton(), 1000);
+		var myVar = setInterval(myTimer, 1000);
     }
 }
 
