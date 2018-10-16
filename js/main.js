@@ -39,15 +39,20 @@ function setImage() {
 	document.getElementById("sadness").src="img/sadness_mono.svg";
 	document.getElementById("angry").src="img/angry_mono.svg";
 
-	switch(flag % 4) {
+	switch(flag % 5) {
 		case 0:
 			document.getElementById("neutral").src="img/neutral_color.svg";
+			break;
 		case 1:
 			document.getElementById("happiness").src="img/happiness_color.svg";
+			break;
 		case 2:
 			document.getElementById("sadness").src="img/sadness_color.svg";
+			break;
 		case 3:
 			document.getElementById("angry").src="img/angry_color.svg";
+			break;
+		case 4:
 	}
 	flag++;
 }
