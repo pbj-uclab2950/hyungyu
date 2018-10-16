@@ -82,7 +82,7 @@ function toggleRecording( e ) {
         audioRecorder.clear();
         audioRecorder.record();
 
-		var myVar = setInterval(myTimer, 1000);
+		var myVar = setInterval(ClickButton, 1000);
     }
 }
 
