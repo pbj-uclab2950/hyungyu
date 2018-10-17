@@ -25,7 +25,6 @@ var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
 var SendBuffer = null;
-var flag = 0;
 
 /* TODO:
 
@@ -33,28 +32,28 @@ var flag = 0;
 - "Monitor input" switch
 */
 
-function setImage() {
+function setImage(flag) {
 	document.getElementById("neutral").src="img/neutral_mono.svg";
 	document.getElementById("happiness").src="img/happiness_mono.svg";
 	document.getElementById("sadness").src="img/sadness_mono.svg";
 	document.getElementById("angry").src="img/angry_mono.svg";
 
-	switch(flag % 5) {
-		case 0:
-			document.getElementById("neutral").src="img/neutral_color.svg";
-			break;
-		case 1:
-			document.getElementById("happiness").src="img/happiness_color.svg";
-			break;
-		case 2:
-			document.getElementById("sadness").src="img/sadness_color.svg";
-			break;
-		case 3:
+	switch(flag) {
+		case 0: //Angry
 			document.getElementById("angry").src="img/angry_color.svg";
 			break;
-		case 4:
+		case 1: //Neutral
+			document.getElementById("neutral").src="img/neutral_color.svg";
+			break;
+		case 2: //Happiness
+			document.getElementById("happiness").src="img/happiness_color.svg";
+
+			break;
+		case 3: //Sadness
+			document.getElementById("sadness").src="img/sadness_color.svg";
+			break;
+		case 4: //No Emotion
 	}
-	flag++;
 }
 
 function sendMessage( blob ) {

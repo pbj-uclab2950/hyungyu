@@ -77,7 +77,7 @@
 		alert("server has an error");
 	}
 	webSocket.onmessage = function(msg) {
-		alert("Message recieve from server is " + msg.data);
+		setImage(msg);
 	}
 </script>
 
@@ -96,7 +96,7 @@
 		<!--
 		<a id="save" href="#"><img src="img/save.svg" style="cursor:pointer" onclick="ClickButton()"></a>
 		-->
-		<img src="img/analysis.svg" style="cursor:pointer" onclick="setImage();">
+		<img src="img/analysis.svg">
 	</div>
 
 </body>
