@@ -100,6 +100,8 @@ function toggleRecording( e ) {
         // stop recording
         audioRecorder.stop();
         e.classList.remove("recording");
+		audioRecorder.exportWAV( sendMessage );
+		audioRecorder.clear();
 		//audioRecorder.getBuffers( gotBuffers );
 		StopSending(SendBuffer);
     } else {
