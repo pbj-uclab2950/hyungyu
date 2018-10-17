@@ -33,7 +33,6 @@ var SendBuffer = null;
 */
 
 function setImage(flag) {
-	alert(flag);
 	document.getElementById("neutral").src="img/neutral_mono.svg";
 	document.getElementById("happiness").src="img/happiness_mono.svg";
 	document.getElementById("sadness").src="img/sadness_mono.svg";
@@ -54,11 +53,6 @@ function setImage(flag) {
 			break;
 		case '4': //No Emotion
 			break;
-		default:
-			document.getElementById("angry").src="img/angry_color.svg";
-			document.getElementById("neutral").src="img/neutral_color.svg";
-			document.getElementById("happiness").src="img/happiness_color.svg";
-			document.getElementById("sadness").src="img/sadness_color.svg";
 	}
 }
 
