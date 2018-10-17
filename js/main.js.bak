@@ -40,20 +40,25 @@ function setImage(flag) {
 	document.getElementById("angry").src="img/angry_mono.svg";
 
 	switch(flag) {
-		case 0: //Angry
+		case '0': //Angry
 			document.getElementById("angry").src="img/angry_color.svg";
 			break;
-		case 1: //Neutral
+		case '1': //Neutral
 			document.getElementById("neutral").src="img/neutral_color.svg";
 			break;
-		case 2: //Happiness
+		case '2': //Happiness
 			document.getElementById("happiness").src="img/happiness_color.svg";
-
 			break;
-		case 3: //Sadness
+		case '3': //Sadness
 			document.getElementById("sadness").src="img/sadness_color.svg";
 			break;
-		case 4: //No Emotion
+		case '4': //No Emotion
+			break;
+		default:
+			document.getElementById("angry").src="img/angry_color.svg";
+			document.getElementById("neutral").src="img/neutral_color.svg";
+			document.getElementById("happiness").src="img/happiness_color.svg";
+			document.getElementById("sadness").src="img/sadness_color.svg";
 	}
 }
 
