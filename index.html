@@ -77,7 +77,8 @@
 		alert("server has an error");
 	}
 	webSocket.onmessage = function(msg) {
-		setImage(msg);
+		var flag = Number(msg);
+		setImage(flag);
 	}
 </script>
 
