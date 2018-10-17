@@ -72,14 +72,15 @@ function sendMessage( blob ) {
 }
 
 function StartSending() {
-	audioRecorder.exportWAV( sendMessage );
+	//audioRecorder.exportWAV( sendMessage );
+	audioRecorder.exportMonoWAV( sendMessage );
 	audioRecorder.clear();
 }
 
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
     // could get mono instead by saying
-    // audioRecorder.exportMonoWAV( doneEncoding );]
+    // audioRecorder.exportMonoWAV( doneEncoding );
 }
 
 function StopSending() {
