@@ -38,13 +38,25 @@ function setImage(flag) {
 	if(flag == '4' || flag == curState)
 		return;
 
+
+	switch(curState) {
+		case '0': //Angry
+			document.getElementById("angry").src="img/angry_mono.svg";
+			break;
+		case '1': //Neutral
+			document.getElementById("neutral").src="img/neutral_mono.svg";
+			break;
+		case '2': //Happiness
+			document.getElementById("happiness").src="img/happiness_mono.svg";
+			break;
+		case '3': //Sadness
+			document.getElementById("sadness").src="img/sadness_mono.svg";
+			break;
+		case '4': //No Emotion
+			break;
+	}
+
 	curState = flag;
-
-	document.getElementById("neutral").src="img/neutral_mono.svg";
-	document.getElementById("happiness").src="img/happiness_mono.svg";
-	document.getElementById("sadness").src="img/sadness_mono.svg";
-	document.getElementById("angry").src="img/angry_mono.svg";
-
 	switch(flag) {
 		case '0': //Angry
 			document.getElementById("angry").src="img/angry_color.svg";
